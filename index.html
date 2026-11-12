@@ -148,6 +148,11 @@ details.q .a::before{content:"答";font-family:var(--f-disp);color:var(--pine);f
 .mission .found{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;border-top:1px dashed var(--line)}
 .mission .seal{width:74px;height:74px;border:3px solid var(--seal);color:var(--seal);border-radius:6px;display:grid;place-items:center;font-family:var(--f-disp);font-size:20px;line-height:1.05;text-align:center;transform:rotate(-6deg);opacity:.18;transition:opacity .3s}
 .mission .seal.on{opacity:1}
+details.explain{border:1px solid var(--line);border-radius:6px;background:var(--bg);padding:10px 14px}
+details.explain summary{cursor:pointer;font-weight:500;color:var(--pine)}
+details.explain[open] summary{margin-bottom:8px}
+details.explain .ex{display:grid;gap:8px;font-size:15px}
+details.explain ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
 .donebar{margin-top:16px;display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
 .donebar input{width:18px;height:18px;accent-color:var(--seal)}
 
@@ -804,6 +809,12 @@ html{scroll-behavior:smooth}
       <div><div class="k">개수만 쓸 때 (5단계)</div><div class="v">log₂5 ≈ 2.32 <small>비트</small></div></div>
       <div><div class="k">위치까지 구별할 때</div><div class="v">2⁵ = 32 <small>가지</small></div></div>
     </div>
+    <details class="explain"><summary>비트란? log₂5 ≈ 2.32의 뜻</summary><div class="ex">
+      <p><b>비트(bit)</b>는 '예/아니오' 질문 하나로 얻는 정보의 양입니다. binary digit(이진 숫자)의 줄임말로, 0과 1 둘 중 하나를 고르는 것이 1비트입니다.</p>
+      <ul><li>1비트: 질문 1번 → 2가지 구별</li><li>2비트: 질문 2번 → 2×2 = 4가지</li><li>3비트: 질문 3번 → 2×2×2 = 8가지</li><li>n비트 → 2ⁿ가지. 거꾸로 N가지 중 하나를 알아내려면 log₂N번의 질문이 필요합니다.</li></ul>
+      <p>봉수는 횛불 개수로 5가지 상태를 알립니다. 질문 2번(4가지)으로는 모자라고 3번(8가지)이면 남으므로, log₂5는 2와 3 사이의 약 2.32입니다. 횛불 신호 한 번에 예/아니오 질문 약 2.32번 분량의 정보가 담깁니다.</p>
+      <p>횛불 다섯 자리를 하나하나 켜짐/꺼짐으로 읽는다면 자리마다 1비트씩 5비트, 2⁵ = 32가지를 보낼 수 있습니다. 조선은 대신 켜진 개수만 세어, 정보는 적지만 멀리서도 헷갈리지 않는 방법을 택했습니다.</p>
+    </div></details>
     <p class="note">토론: 위치까지 쓰면 훨씬 많은 정보를 보낼 수 있는데, 조선은 왜 개수만 썼을까요? 먼 거리에서 잘못 읽을 위험과 연결해 보세요.</p>
   </div></div>
 </section>
